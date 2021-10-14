@@ -43,5 +43,5 @@ root.right.right = Node(7)
  
 print ("LCA(4, 5) = %d" %(getLCA(root, 4, 5)))
 print ("LCA(4, 6) = %d" %(getLCA(root, 4, 6)))
-print ("LCA(3, 4) = %d" %(getLCA(root,3,4)))
-print ("LCA(2, 4) = %d" %(getLCA(root,2, 4)))
+print ("LCA(3, 4) = %d" %(getLCA(root, 3, 4)))
+print ("LCA(2, 4) = %d" %(getLCA(root, 2, 4)))
