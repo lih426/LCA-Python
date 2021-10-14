@@ -27,54 +27,54 @@ class TestLCA(unittest.TestCase):
         #H   I   J   K
 
     def test_base1(self):
-        self.assertTrue(LCA.getLCA(self.root,"B", "C"), "A")
-        self.assertTrue(LCA.getLCA(self.root,"D", "E"), "B")
-        self.assertTrue(LCA.getLCA(self.root,"F", "G"), "C")
-        self.assertTrue(LCA.getLCA(self.root,"H", "I"), "D")
+        self.assertEqual(LCA.getLCA(self.root,"B", "C"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"D", "E"), "B")
+        self.assertEqual(LCA.getLCA(self.root,"F", "G"), "C")
+        self.assertEqual(LCA.getLCA(self.root,"H", "I"), "D")
 
     def test_base2(self):
-        self.assertTrue(LCA.getLCA(self.root,"H", "K"), "A")
-        self.assertTrue(LCA.getLCA(self.root,"D", "F"), "A")
-        self.assertTrue(LCA.getLCA(self.root,"H", "J"), "B")
+        self.assertEqual(LCA.getLCA(self.root,"H", "K"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"D", "F"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"H", "J"), "B")
 
     def test_complex(self):
-        self.assertTrue(LCA.getLCA(self.root,"B", "G"), "A")
-        self.assertTrue(LCA.getLCA(self.root,"C", "H"), "A")
-        self.assertTrue(LCA.getLCA(self.root,"H", "E"), "B")
-        self.assertTrue(LCA.getLCA(self.root,"D", "J"), "B")
-        self.assertTrue(LCA.getLCA(self.root,"G", "K"), "C")
+        self.assertEqual(LCA.getLCA(self.root,"B", "G"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"C", "H"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"H", "E"), "B")
+        self.assertEqual(LCA.getLCA(self.root,"D", "J"), "B")
+        self.assertEqual(LCA.getLCA(self.root,"G", "K"), "C")
 
     def test_is_LCA_itself(self):
-        self.assertTrue(LCA.getLCA(self.root,"A", "B"), "A")
-        self.assertTrue(LCA.getLCA(self.root,"A", "C"), "A")
-        self.assertTrue(LCA.getLCA(self.root,"A", "D"), "A")
-        self.assertTrue(LCA.getLCA(self.root,"A", "K"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"A", "B"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"A", "C"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"A", "D"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"A", "K"), "A")
 
-        self.assertTrue(LCA.getLCA(self.root,"B", "D"), "B")
-        self.assertTrue(LCA.getLCA(self.root,"B", "E"), "B")
-        self.assertTrue(LCA.getLCA(self.root,"B", "H"), "B")
+        self.assertEqual(LCA.getLCA(self.root,"B", "D"), "B")
+        self.assertEqual(LCA.getLCA(self.root,"B", "E"), "B")
+        self.assertEqual(LCA.getLCA(self.root,"B", "H"), "B")
 
-        self.assertTrue(LCA.getLCA(self.root,"C", "F"), "C")
-        self.assertTrue(LCA.getLCA(self.root,"C", "G"), "C")
-        self.assertTrue(LCA.getLCA(self.root,"C", "K"), "C")
+        self.assertEqual(LCA.getLCA(self.root,"C", "F"), "C")
+        self.assertEqual(LCA.getLCA(self.root,"C", "G"), "C")
+        self.assertEqual(LCA.getLCA(self.root,"C", "K"), "C")
 
     def test_same_node(self):
-        self.assertTrue(LCA.getLCA(self.root,"A", "A"), "A")
-        self.assertTrue(LCA.getLCA(self.root,"B", "B"), "B")
-        self.assertTrue(LCA.getLCA(self.root,"C", "C"), "C")
-        self.assertTrue(LCA.getLCA(self.root,"D", "D"), "D")
-        self.assertTrue(LCA.getLCA(self.root,"F", "F"), "F")
-        self.assertTrue(LCA.getLCA(self.root,"H", "H"), "H")
-        self.assertTrue(LCA.getLCA(self.root,"K", "K"), "K")
+        self.assertEqual(LCA.getLCA(self.root,"A", "A"), "A")
+        self.assertEqual(LCA.getLCA(self.root,"B", "B"), "B")
+        self.assertEqual(LCA.getLCA(self.root,"C", "C"), "C")
+        self.assertEqual(LCA.getLCA(self.root,"D", "D"), "D")
+        self.assertEqual(LCA.getLCA(self.root,"F", "F"), "F")
+        self.assertEqual(LCA.getLCA(self.root,"H", "H"), "H")
+        self.assertEqual(LCA.getLCA(self.root,"K", "K"), "K")
 
     def test_invalid(self):
-        self.assertTrue(LCA.getLCA(self.root,"L", "D"), "Error")
-        self.assertTrue(LCA.getLCA(self.root,"M", "N"), "Error")
+        self.assertEqual(LCA.getLCA(self.root,"L", "D"), -1)
+        self.assertEqual(LCA.getLCA(self.root,"M", "N"), -1)
 
     def test_empty(self):
-        self.assertTrue(LCA.getLCA(self.root," ", "A"), "Error")
-        self.assertTrue(LCA.getLCA(self.root," ", " "), "Error")
-        self.assertTrue(LCA.getLCA(self.root,"", ""), "Error")
+        self.assertEqual(LCA.getLCA(self.root," ", "A"), -1)
+        self.assertEqual(LCA.getLCA(self.root," ", " "), -1)
+        self.assertEqual(LCA.getLCA(self.root,"", ""), -1)
 
 if __name__ == '__main__':
     unittest.main()
